@@ -3,14 +3,40 @@
 html[dark] .ytd-app {
 background:#000;
 }
-/*I THINK THIS IS A NECESSARY FIX FOR PLAYLISTS, I REMEMBER IT WAS DRIFTING SO I MARGINED IT*/
-#playlist > #container {
-    margin-left: 12px !important;
+
+/*FIXES AN ISSUE WITH ELEMENTS BEING IN THE WRONG SPOT AND SIZE*/
+ytd-video-primary-info-renderer{
+    padding: 8px 14px 0 14px !important
+}
+ytd-expander.ytd-video-secondary-info-renderer{
+    margin-left:0px
+}
+ytd-video-secondary-info-renderer{
+    padding-bottom:8px
 }
 
+#meta.ytd-watch-flexy paper-button#more, #meta.ytd-watch-flexy tp-yt-paper-button#more, #meta.ytd-watch-flexy paper-button#less, #meta.ytd-watch-flexy tp-yt-paper-button#less, tp-yt-paper-button#expand, tp-yt-paper-button#collapse{
+    margin-top:0
+}
+/*I THINK THIS IS A NECESSARY FIX FOR PLAYLISTS, I REMEMBER IT WAS DRIFTING SO I MARGINED IT*/
+#playlist > #container {
+    margin-left: 12px !important
+}
+#container.ytd-masthead{
+    max-height: 50px
+}
 /*DARK SEARCH*/
 #search-form> ytd-watch, .gstl_50 *, .sbdd_c > *, [title="Search"], .secondary-header-contents{
-background-color: #131313 !important;
+    background-color: #131313 !important
+}
+
+/*Fucking dumb shit below search bar on my channel was white so this line has to exist*/
+#masthead-container.ytd-app::after {
+  border-bottom: .1px solid #212121
+}
+
+#masthead-container.ytd-app #masthead:not([dark]){
+  border: none
 }
 
 .gsfs {
@@ -102,10 +128,6 @@ ytd-guide-renderer #sections {
 }
 div#header.class #vote-count-middle ytd-comment-action-buttons-renderer {
     color: #0e7713 !important;
-}
-.ytd-video-primary-info-renderer#info {
-    border-bottom: 1px solid #252525;
-    margin-right:15px
 }
 #info.ytd-video-primary-info-renderer > #menu-container{
     margin-right: 0px !important;
@@ -480,7 +502,7 @@ a.yt-uix-button.yt-uix-button-epic-nav-item {
 }
 a.yt-uix-button-epic-nav-item:hover:not(.secondary-nav) {
     color:rgb(192, 192, 192)!important;
-    border-bottom:3px solid rgba(255, 255, 255, 0.1)!important
+    border-bottom:3px solid rgba(255, 0, 0, .1)!important
 }
 a.yt-uix-button-epic-nav-item.partially-selected:hover, button.yt-uix-button-epic-nav-item:hover, button.yt-uix-button-epic-nav-item.selected, button.yt-uix-button-epic-nav-item.yt-uix-button-toggled, .epic-nav-item:hover, .epic-nav-item.selected, .epic-nav-item.yt-uix-button-toggled, .epic-nav-item-heading {
     border-color:rgb(204, 24, 30)!important
@@ -2629,5 +2651,7 @@ a.yt-uix-button-epic-nav-item.partially-selected:hover, button.yt-uix-button-epi
   background: #1aab8e -webkit-linear-gradient(bottom, #1aab8e 0%, #1aab8e 100%);
 }
 
-#search-form> ytd-watch, .gstl_50 *, .sbdd_c > *, [title="Search"], .secondary-header-contents{
-background-color: rgb(0,0,0) !important;}
+#search-form> ytd-watch, .gstl_50 *, .sbdd_c > *, [title="Search"], .secondary-header-contents {
+background-color: rgb(0,0,0) !important;
+    }
+    }
